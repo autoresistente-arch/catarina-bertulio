@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAMAUMA — Contato</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+<header><nav>
+<div class="logo">SAMAUMA<span></span></div>
+<div class="links">
+<a href="index.html">LOJA</a>
+<a href="index.html#universo">A MARCA</a>
+<a href="index.html#cultura">CULTURA</a>
+<a href="contato.html">CONTATO</a>
+</div>
+<a class="cta" href="index.html">Voltar à loja</a>
+</nav></header>
+
+<main>
+<section class="section" style="padding-top:90px">
+<div class="section-head">
+<h2>Entre em contato.</h2>
+<p>Pedidos, dúvidas, encomendas para eventos ou projetos culturais: queremos conhecer sua ideia.</p>
+</div>
+<div class="contact">
+<div class="contact-box">
+<h3>Atendimento SAMAUMA</h3>
+<p>Fale com nosso ateliê sobre produtos, personalizações, eventos e parcerias.</p>
+<div class="contact-links">
+<a class="contact-link" href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp · falar agora</a>
+<a class="contact-link" href="mailto:contato@samauma.com.br">E-mail · contato@samauma.com.br</a>
+</div>
+</div>
+<div class="contact-box">
+<form class="contact-form" onsubmit="sendContact(event)">
+<div><label for="nome">Nome</label><input id="nome" name="nome" required placeholder="Seu nome"></div>
+<div><label for="email">E-mail</label><input id="email" name="email" type="email" required placeholder="voce@email.com"></div>
+<div><label for="assunto">O que procura?</label><input id="assunto" name="assunto" required placeholder="Produto, evento, parceria..."></div>
+<div><label for="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" required placeholder="Escreva sua mensagem"></textarea></div>
+<button class="cta" type="submit">Enviar mensagem</button>
+<div class="form-status" id="form-status" aria-live="polite"></div>
+</form>
+</div>
+</div>
+</section>
+<section class="newsletter">
+<h2>Receba novidades do ateliê</h2>
+<p>Novas coleções, aromas e encontros culturais.</p>
+<form onsubmit="event.preventDefault();this.querySelector('button').textContent='Inscrição anotada';">
+<input type="email" required placeholder="Seu melhor e-mail" aria-label="Seu e-mail">
+<button type="submit">Cadastrar</button>
+</form>
+</section>
+</main>
+<footer class="footer"><span>© 2026 SAMAUMA</span><span>feito com matéria, aroma e cultura.</span></footer>
+<script src="js/script.js"></script>
+</div>
+</body>
+</html>

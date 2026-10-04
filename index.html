@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAMAUMA — Ateliê de aromas, sabores e cultura</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <nav>
+          <div class="logo"><img src="assets/img/samauma-logo.png" width="77" height="88"></img></div>
+          <div class="links">
+            <a href="#loja">LOJA</a><a href="#universo">A MARCA</a
+            ><a href="#cultura">CULTURA</a><a href="contato.html">CONTATO</a>
+          </div>
+          <button
+            class="cta"
+            onclick="
+              document
+                .querySelector('#loja')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            Explorar coleção <span class="cart-count" id="cart-count">0</span>
+          </button>
+        </nav>
+      </header>
+      <main>
+        <section class="hero">
+          <div>
+            <div class="eyebrow">ATELIÊ DE AROMAS, SABORES E CULTURA</div>
+            <h1>O feito à mão<br />tem alma.</h1>
+            <p>
+              Pequenos rituais, aromas que ficam na memória e sabores que contam
+              histórias. Descubra o universo SAMAUMA.
+            </p>
+            <div class="actions">
+              <button
+                class="cta"
+                onclick="
+                  document
+                    .querySelector('#loja')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+              >
+                Conheça a coleção</button
+              ><button
+                class="ghost"
+                onclick="window.location.href = 'contato.html'"
+              >
+                Fale conosco
+              </button>
+            </div>
+          </div>
+          <div
+            class="orb"
+            aria-label="Fotografia de vela artesanal em ambiente acolhedor"
+          ></div>
+        </section>
+        <section class="shop-intro" id="loja">
+          <h2 class="shop-title">Coleção SAMAUMA</h2>
+          <p>
+            Peças artesanais para perfumar a casa, presentear e celebrar
+            encontros. Escolha seu ritual.
+          </p>
+        </section>
+        <div class="shop-tools">
+          <div class="filter-row">
+            <button
+              class="filter-btn active"
+              data-filter="todos"
+              onclick="filterProducts('todos', this)"
+            >
+              Todos</button
+            ><button
+              class="filter-btn"
+              data-filter="velas"
+              onclick="filterProducts('velas', this)"
+            >
+              Velas aromáticas</button
+            ><button
+              class="filter-btn"
+              data-filter="cachaca"
+              onclick="filterProducts('cachaca', this)"
+            >
+              Cachaça artesanal</button
+            ><button
+              class="filter-btn"
+              data-filter="cultura"
+              onclick="filterProducts('cultura', this)"
+            >
+              Cultura
+            </button>
+          </div>
+          <span id="product-count">6 experiências</span>
+        </div>
+        <section class="product-grid" id="product-grid">
+          <article class="product" data-category="velas">
+            <div
+              class="product-photo"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=85&quot;);
+              "
+            ></div>
+            <div class="product-info">
+              <span class="product-type">Aromas · Casa</span>
+              <h3>Vela Botânica</h3>
+              <p>Notas verdes e delicadas para desacelerar.</p>
+              <div class="product-bottom">
+                <span class="price">R$ 49,90</span
+                ><button class="add-cart" onclick="addCart('Vela Botânica')">
+                  Adicionar
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="product" data-category="velas">
+            <div
+              class="product-photo"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?auto=format&fit=crop&w=900&q=85&quot;);
+              "
+            ></div>
+            <div class="product-info">
+              <span class="product-type">Aromas · Pausa</span>
+              <h3>Vela Brisa</h3>
+              <p>Um perfume suave para momentos tranquilos.</p>
+              <div class="product-bottom">
+                <span class="price">R$ 59,90</span
+                ><button class="add-cart" onclick="addCart('Vela Brisa')">
+                  Adicionar
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="product" data-category="velas">
+            <div
+              class="product-photo"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1603905179139-d6b4e2e6b7a5?auto=format&fit=crop&w=900&q=85&quot;);
+              "
+            ></div>
+            <div class="product-info">
+              <span class="product-type">Aromas · Presente</span>
+              <h3>Kit Ritual</h3>
+              <p>Uma combinação pensada para presentear.</p>
+              <div class="product-bottom">
+                <span class="price">R$ 89,90</span
+                ><button class="add-cart" onclick="addCart('Kit Ritual')">
+                  Adicionar
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="product" data-category="cachaca">
+            <div
+              class="product-photo"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=900&q=85&quot;);
+              "
+            ></div>
+            <div class="product-info">
+              <span class="product-type">Origem · Artesanal</span>
+              <h3>Cachaça da Casa</h3>
+              <p>Produção em pequenos lotes e identidade brasileira.</p>
+              <div class="product-bottom">
+                <span class="price">Consultar</span
+                ><button class="add-cart" onclick="addCart('Cachaça da Casa')">
+                  Tenho interesse
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="product" data-category="cachaca">
+            <div
+              class="product-photo"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=85&quot;);
+              "
+            ></div>
+            <div class="product-info">
+              <span class="product-type">Origem · Encontro</span>
+              <h3>Edição SAMAUMA</h3>
+              <p>Uma experiência para compartilhar à mesa.</p>
+              <div class="product-bottom">
+                <span class="price">Consultar</span
+                ><button class="add-cart" onclick="addCart('Edição SAMAUMA')">
+                  Tenho interesse
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="product" data-category="cultura">
+            <div
+              class="product-photo"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=85&quot;);
+              "
+            ></div>
+            <div class="product-info">
+              <span class="product-type">Arte · Música</span>
+              <h3>Experiências culturais</h3>
+              <p>Produção de encontros, música e projetos autorais.</p>
+              <div class="product-bottom">
+                <span class="price">Sob consulta</span
+                ><button
+                  class="add-cart"
+                  onclick="addCart('Experiências culturais')"
+                >
+                  Tenho interesse
+                </button>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="section" id="universo">
+          <div class="section-head">
+            <h2>Feito em pequenos gestos.</h2>
+            <p>
+              Da escolha das matérias-primas ao cuidado com cada detalhe,
+              criamos produtos e experiências que convidam a sentir, lembrar e
+              compartilhar.
+            </p>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <div class="card-image"></div>
+              <h3>Sabores com origem</h3>
+              <p>
+                Cachaça artesanal que celebra a tradição brasileira e o prazer
+                de estar junto.
+              </p>
+              <span class="tag">SABOR · ORIGEM · TEMPO</span>
+            </article>
+            <article class="card">
+              <div class="card-image"></div>
+              <h3>Aromas para habitar</h3>
+              <p>
+                Velas aromáticas para criar atmosferas acolhedoras e pequenos
+                rituais cotidianos.
+              </p>
+              <span class="tag">AROMA · RITUAL · CASA</span>
+            </article>
+            <article class="card">
+              <div class="card-image"></div>
+              <h3>Cultura em movimento</h3>
+              <p>
+                Produção cultural que aproxima pessoas por meio da arte, da
+                música e do encontro.
+              </p>
+              <span class="tag">ARTE · MÚSICA · ENCONTRO</span>
+            </article>
+          </div>
+        </section>
+        <section class="section" id="cultura">
+          <div class="manifesto">
+            <h2>Não é só produto.<br />É atmosfera.</h2>
+            <p>
+              SAMAUMA é território criativo. Uma marca para beber, acender,
+              ouvir, encontrar e celebrar. A gente acredita no feito à mão, nas
+              boas histórias e na cultura como espaço de transformação.<br /><br /><strong
+                >Da matéria-prima ao encontro: tudo precisa ter alma.</strong
+              >
+            </p>
+          </div>
+        </section>
+        <section class="guide">
+          <article>
+            <h3>Um aroma para cada momento</h3>
+            <p>
+              Notas frescas para renovar o ambiente, aromas florais para criar
+              delicadeza e acordes amadeirados para uma atmosfera mais
+              acolhedora. Encontre a fragrância que combina com seu espaço.
+            </p>
+          </article>
+          <article>
+            <h3>Artesanal, com intenção</h3>
+            <p>
+              Valorizamos o cuidado manual, a produção em pequena escala e
+              objetos que fazem parte da casa mesmo quando não estão acesos. A
+              experiência começa na escolha e continua na memória.
+            </p>
+          </article>
+        </section>
+        <section class="section" id="cultura">
+          <div class="manifesto">
+            <h2>Mais que objetos.<br />Memórias vivas.</h2>
+            <p>
+              SAMAUMA é um território de criação que reúne sabores, aromas e
+              cultura. Uma marca para acender, brindar, ouvir, encontrar e
+              celebrar. <br /><br /><strong
+                >O que fazemos é feito para ser sentido.</strong
+              >
+            </p>
+          </div>
+        </section>
+        <section class="section" id="contato">
+          <div class="section-head">
+            <h2>Entre em contato.</h2>
+            <p>
+              Pedidos, dúvidas, encomendas para eventos ou projetos culturais:
+              queremos conhecer sua ideia.
+            </p>
+          </div>
+          <div class="contact">
+            <div class="contact-box">
+              <h3>Atendimento SAMAUMA</h3>
+              <p>
+                Fale com nosso ateliê sobre produtos, personalizações, eventos e
+                parcerias.
+              </p>
+              <div class="contact-links">
+                <a
+                  class="contact-link"
+                  href="https://wa.me/5500000000000"
+                  target="_blank"
+                  rel="noopener"
+                  >WhatsApp · falar agora</a
+                ><a class="contact-link" href="mailto:contato@samauma.com.br"
+                  >E-mail · contato@samauma.com.br</a
+                >
+              </div>
+            </div>
+            <div class="contact-box">
+              <form class="contact-form" onsubmit="sendContact(event)">
+                <div>
+                  <label for="nome">Nome</label
+                  ><input
+                    id="nome"
+                    name="nome"
+                    required
+                    placeholder="Seu nome"
+                  />
+                </div>
+                <div>
+                  <label for="email">E-mail</label
+                  ><input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="voce@email.com"
+                  />
+                </div>
+                <div>
+                  <label for="assunto">O que procura?</label
+                  ><input
+                    id="assunto"
+                    name="assunto"
+                    required
+                    placeholder="Produto, evento, parceria..."
+                  />
+                </div>
+                <div>
+                  <label for="mensagem">Mensagem</label
+                  ><textarea
+                    id="mensagem"
+                    name="mensagem"
+                    required
+                    placeholder="Escreva sua mensagem"
+                  ></textarea>
+                </div>
+                <button class="cta" type="submit">Enviar mensagem</button>
+                <div
+                  class="form-status"
+                  id="form-status"
+                  aria-live="polite"
+                ></div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section class="newsletter">
+          <h2>Receba novidades do ateliê</h2>
+          <p>Novas coleções, aromas e encontros culturais.</p>
+          <form
+            onsubmit="
+              event.preventDefault();
+              this.querySelector('button').textContent = 'Inscrição anotada';
+            "
+          >
+            <input
+              type="email"
+              required
+              placeholder="Seu melhor e-mail"
+              aria-label="Seu e-mail"
+            /><button type="submit">Cadastrar</button>
+          </form>
+        </section>
+      </main>
+      <footer class="footer">
+        <span>© 2026 SAMAUMA</span
+        ><span>feito com matéria, aroma e cultura.</span>
+      </footer>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
